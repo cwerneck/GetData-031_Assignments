@@ -92,4 +92,29 @@ colnames(Data_all)<-labelsok
 # 5 - From the Dataset in step 4, creates a second, independent tidy dataset 
 #     with the average of each variable for each activity ans each subject
 #-----------------------------------------------------------------------------------
-
+#    sort the dataset by Subject and Activity
+#
+Data_sorted<-Data_all[order(Data_all$Subjects, Data_all$Activities),]
+#
+#  creates Data_final calculating the average for each subject and activity 
+#
+SubAnt<-"0"
+ActAnt<-""
+j<-0
+for (i in 1:length(Data_sorted)){
+  Data_aux<-Data_sorted[i,]
+  SubAtu<-Data_aux[1]
+  ActAtu<-Data_aux[2]
+  if (i == 1){
+    j=j+1
+    Data_final<-Data_aux
+  }else{
+    if (SubAtu==SubAnt & ActAtu == ActAnt){
+      Data_acc<-Data_acc+Data_aux}
+    else{
+      Data_final[]
+      
+      
+    }  
+  }
+}
